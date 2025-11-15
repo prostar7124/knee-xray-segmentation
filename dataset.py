@@ -3,7 +3,7 @@ import numpy as np
 from torch.utils.data import Dataset
 import cv2
 
-TARGET_SIZE = (224, 224)
+TARGET_SIZE = (256, 256)
 
 
 def read_xray(path):
@@ -54,3 +54,4 @@ class Knee_dataset(Dataset):
             "mask": mask,
             "has_mask": has_mask
         }
+
