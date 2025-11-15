@@ -24,7 +24,7 @@ def main():
     model = UNetLext(
         input_channels=1,
         output_channels=1,
-        activation='selu',  
+        activation='relu',  
         pretrained=False
     )
 
@@ -35,3 +35,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
