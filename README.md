@@ -23,7 +23,7 @@ The training uses:
 - BCEWithLogitsLoss + Dice Loss
 - Adam optimizer
 - Automatic saving of best model → best_model.pth
-- Best Dice Score Achieved: 0.9363.
+- Best Dice Score Achieved: 0.93 - 0.94
 
 **Evaluation**
 Use your saved checkpoint:  python evaluate.py -checkpoint best_model.pth
