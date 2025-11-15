@@ -23,17 +23,28 @@ The training uses:
 - BCEWithLogitsLoss + Dice Loss
 - Adam optimizer
 - Automatic saving of best model → best_model.pth
-- Best Dice Score Achieved: 0.93 - 0.94
+
 
 **Evaluation**
 Use your saved checkpoint:  python evaluate.py -checkpoint best_model.pth
 
 The script:
-- Computes the average Dice score
+- Computes the average Dice score: 0.93 - 0.94
 - Shows side-by-side:
           1. Input X-ray
           2. Ground truth mask
           3. Predicted mask
+
+During training with the original SELU activation, the model produced average Dice scores around 0.93–0.94.
+
+After updating the activation function in UNetLext from selu to relu, the model converged better and produced a higher and more consistent segmentation accuracy.
+Final Evaluation Result
+
+Average Dice Score: ~0.9522
+
+This improvement is due to the more stable behavior of ReLU + BatchNorm, which works better with our dataset size and UNet architecture.
+
+The final model (best_model.pth) uses: activation='relu'
   
 **Requirements**
 torch
